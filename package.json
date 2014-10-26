@@ -1,0 +1,45 @@
+{
+  "name": "express-riak",
+  "version": "0.0.0",
+  "description": "A Riak adapter for express session stores",
+  "author": "Jussi Kalliokoski <jussi.kalliokoski@gmail.com>",
+  "license": "ISC",
+  "homepage": "https://github.com/jussi-kalliokoski/express-riak",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jussi-kalliokoski/express-riak"
+  },
+  "keywords": [
+    "express",
+    "session",
+    "riak"
+  ],
+  "bugs": {
+    "url": "https://github.com/jussi-kalliokoski/express-riak/issues"
+  },
+  "scripts": {
+    "coveralls": "cat ./coverage/lcov.info | COVERALLS_SERVICE_NAME=\"travis-ci\" coveralls",
+    "test": "gulp test"
+  },
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "riakpbc": "^2.0.3"
+  },
+  "devDependencies": {
+    "chai": "^1.9.2",
+    "coveralls": "^2.11.2",
+    "express-session": "^1.9.1",
+    "gulp": "^3.8.9",
+    "gulp-istanbul": "^0.3.1",
+    "gulp-jscs": "^1.2.1",
+    "gulp-jshint": "^1.8.5",
+    "gulp-mocha": "^1.1.1",
+    "jscs-trailing-comma": "^0.3.0",
+    "rewire": "^2.1.0",
+    "sinon": "^1.10.3",
+    "sinon-chai": "^2.6.0"
+  }
+}

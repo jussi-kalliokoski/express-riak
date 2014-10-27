@@ -41,6 +41,25 @@ describe("RiakStore", function () {
         });
     });
 
+    describe("when an existing client is provided", function () {
+        var client;
+
+        beforeEach(function () {
+            client = riakPbcMock.createClient();
+            options = {
+                bucket: "foo",
+                client: client,
+            };
+
+            store = new RiakStore(options);
+        });
+
+        it("should use the existing client instead of creating a new one", function () {
+            store.client.should.equal(client);
+            riakPbcMock.createClient.should.have.been.calledOnce;
+        });
+    });
+
     describe("when a new session is created", function () {
         beforeEach(function () {
             options = { bucket: "foo" };

@@ -1,6 +1,6 @@
 {
   "name": "express-riak",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A Riak adapter for express session stores",
   "author": "Jussi Kalliokoski <jussi.kalliokoski@gmail.com>",
   "license": "ISC",

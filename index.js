@@ -6,6 +6,10 @@ module.exports = function (Session) {
     var Store = Session.Store;
 
     function RiakStore (options) {
+        if ( !options.bucket || typeof options.bucket !== "string" ) {
+            throw new TypeError("`bucket` should be a non-empty string");
+        }
+
         this.bucket = options.bucket;
         Store.call(this, options);
         this.client = options.client || RiakPbc.createClient(options.connection);

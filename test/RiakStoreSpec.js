@@ -60,6 +60,22 @@ describe("RiakStore", function () {
         });
     });
 
+    describe("when a bucket is not provided", function () {
+        it("should throw an error", function () {
+            void function () {
+                new RiakStore({ bucket: "" });
+            }.should.throw(TypeError, "`bucket` should be a non-empty string");
+        });
+    });
+
+    describe("when bucket is not a string", function () {
+        it("should throw an error", function () {
+            void function () {
+                new RiakStore({ bucket: {} });
+            }.should.throw(TypeError, "`bucket` should be a non-empty string");
+        });
+    });
+
     describe("when a new session is created", function () {
         beforeEach(function () {
             options = { bucket: "foo" };

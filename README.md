@@ -25,7 +25,7 @@ var RiakStore = require("express-riak")(Session);
 app.use(Session({
     store: new RiakStore({
         bucket: "myapp.sessions",
-        host: {
+        connection: {
             // riakpbc options here
         },
     }),

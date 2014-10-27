@@ -8,7 +8,7 @@ module.exports = function (Session) {
     function RiakStore (options) {
         this.bucket = options.bucket;
         Store.call(this, options);
-        this.client = RiakPbc.createClient(options.host);
+        this.client = RiakPbc.createClient(options.connection);
     }
 
     RiakStore.prototype[parentPrototype] = Store.prototype;

@@ -24,7 +24,7 @@ describe("RiakStore", function () {
         beforeEach(function () {
             options = {
                 bucket: "foo",
-                host: {
+                connection: {
                 },
             };
 
@@ -33,7 +33,7 @@ describe("RiakStore", function () {
 
         it("should create a new client with the correct options", function () {
             store.client.should.be.an.instanceOf(riakPbcMock.RiakPBC);
-            riakPbcMock.createClient.should.have.been.calledWith(options.host);
+            riakPbcMock.createClient.should.have.been.calledWith(options.connection);
         });
 
         it("should assign the bucket according to the options", function () {
